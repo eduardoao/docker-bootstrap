@@ -1,13 +1,23 @@
 version: '3'
 
+volumes:
+  dados:
+
 services:
-  db:
-    image: postgres:9.6
-    container_name: postgres
-    environment:
-      - POSTGRES_USER='super_admin'
-      - POSTGRES_PASSWORD='12345'
-      
+    db:
+      image: postgres:9.6
+      environment:
+        POSTGRES_PASSWORD: 12345
+      volumes:
+        # Volume dos dados
+        - dados:/var/lib/postgresql/data
+        # Scripts
+        - ./scripts:/scripts
+        - ./scripts/init.sql:/docker-entrypoint-initdb.d/init.sql
+
+
+   
+
 
 
 
