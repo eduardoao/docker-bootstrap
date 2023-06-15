@@ -4,4 +4,9 @@ git push -u origin main
 
 
 
+<<<<<<< Updated upstream
 # docker-compose exec db psql -U postgres -f /scripts/check.sql
+=======
+# docker-compose exec db psql -U postgres -f /scripts/check.sql
+
+>>>>>>> Stashed changes
